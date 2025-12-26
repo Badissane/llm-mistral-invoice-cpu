@@ -10,6 +10,10 @@ with open('config.yml', 'r', encoding='utf8') as ymlfile:
     cfg = box.Box(yaml.safe_load(ymlfile))
 
 
+llm = Ollama(
+    model="mistral:instruct",  # or your Ollama model name
+    temperature=0.1
+'''
 def setup_llm():
     llm = Ollama(model=cfg.MODEL_BIN_PATH,
                         model_type=cfg.MODEL_TYPE,
@@ -18,3 +22,4 @@ def setup_llm():
     )
 
     return llm
+'''
