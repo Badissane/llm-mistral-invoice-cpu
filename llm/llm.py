@@ -2,6 +2,8 @@ from langchain.llms import CTransformers
 import box
 import yaml
 
+from langchain_community.llms import Ollama
+
 
 # Import config vars
 with open('config.yml', 'r', encoding='utf8') as ymlfile:
@@ -9,7 +11,7 @@ with open('config.yml', 'r', encoding='utf8') as ymlfile:
 
 
 def setup_llm():
-    llm = CTransformers(model=cfg.MODEL_BIN_PATH,
+    llm = Ollama(model=cfg.MODEL_BIN_PATH,
                         model_type=cfg.MODEL_TYPE,
                         max_new_tokens=cfg.MAX_NEW_TOKENS,
                         temperature=cfg.TEMPERATURE
